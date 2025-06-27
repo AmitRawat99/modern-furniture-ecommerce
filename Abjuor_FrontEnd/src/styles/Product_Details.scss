@@ -1,0 +1,125 @@
+@import '../index.scss';
+
+
+.product-details-container {
+    margin-top: 50px;
+
+    .product-container-img {
+        .product-main-img{
+
+            img {
+                width: 100%;
+                height: 400px;
+            }
+        }
+        .bottom-img{
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            img{
+                cursor: pointer;
+                width: 50%;
+                height: 150px;
+
+            }
+        }
+    }
+
+    .product-details {
+        .product-title {
+            h2 {
+                font-size: 1.8rem;
+                margin: 15px 0;
+                font-weight: bold;
+                color: $title-color;
+            }
+
+            h4 {
+                margin-top: 20px;
+                font-weight: bold;
+                color: $heading-color;
+                font-size: 18px;
+
+                sup {
+                    margin-left: 10px;
+                    text-decoration: line-through;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+    .product-qty-box {
+        display: flex;
+        margin: 15px 0;
+        align-items: center;
+        justify-content: space-between;
+        width: 130px;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background-color: #f9f9f9;
+    
+        .qty-symbol {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: $title-color;
+            cursor: pointer;
+            user-select: none;
+    
+            &:hover {
+                color: darken($title-color, 10%);
+            }
+        }
+    
+        .qty-count {
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 0 10px;
+        }
+    }
+    .product-btn{
+        display: flex;
+        gap: 10px;
+        button{
+        }
+    }
+    .product-points{
+        margin: 20px 0;
+        h1{
+            color: $Black-Color;
+            font-weight: bold;
+            font-family: $roboto-font;
+            font-size: 1.5rem;
+        }
+        .product-benefit{
+            li{
+                list-style:decimal;
+                font-weight:500;
+                font-family: $Tagess-font;
+                margin: 10px 0;
+            }
+        }
+    }
+}
+
+#product-tabs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    button{
+        width: 150px;
+        height: 35px;
+        background-color: transparent !important;
+        color: $Black-Color !important;
+    }
+    p{
+        border: 2px solid red;
+    }
+}
+
+
+.active{
+    border: 1px solid lightgray !important;
+}

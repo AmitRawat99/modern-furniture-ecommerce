@@ -1,0 +1,431 @@
+@import '../index.scss';
+
+
+
+
+.user_data_container {
+  display: flex;
+  justify-content: space-evenly;
+  min-height: 400px;
+  align-items: center;
+  gap: 30px;
+  background-color: #f9f9f9;
+}
+
+.user_Container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  border: 1px solid lightgray;
+  width: 100%;
+  text-align: center;
+}
+
+.user_img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+  }
+
+  h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+}
+
+.user_info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+
+  .User_Name {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+
+    h5 {
+      color: black;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    a {
+      margin: 0;
+      text-decoration: none;
+      font-weight: 500;
+      color: black;
+    }
+  }
+}
+
+.user_account {
+  display: flex;
+  min-height: 80vh;
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border: 2px solid red;
+  align-items: center;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  &__sidebar {
+    background-color: #f5f8fa;
+    width: 260px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-right: 1px solid #e0e6ed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .user-avatar {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+
+    .user-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 0.3rem;
+    }
+
+    .user-email {
+      font-size: 0.9rem;
+      color: #555;
+      word-break: break-all;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #eee;
+      margin-bottom: 2rem;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 3px solid transparent;
+        transition: color 0.3s, border-bottom-color 0.3s;
+
+        &.active {
+          color: #007bff;
+          border-bottom-color: #007bff;
+          font-weight: 700;
+        }
+
+        &:hover:not(.active) {
+          color: #007bff;
+        }
+      }
+    }
+
+    .tab-content {
+      flex: 1;
+
+      h3 {
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+        color: #333;
+      }
+
+      .profile-info-row {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+
+        strong {
+          width: 90px;
+          color: #444;
+        }
+
+        a {
+          color: #007bff;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .orders-section {
+        .orders-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 1.25rem;
+
+          .order-card {
+            display: flex;
+            background: #fafafa;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgb(0 0 0 / 0.05);
+            align-items: center;
+            gap: 1rem;
+
+            img {
+              width: 60px;
+              height: 60px;
+              border-radius: 6px;
+              object-fit: cover;
+              box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .order-details {
+              flex: 1;
+
+              h4 {
+                margin: 0 0 0.25rem 0;
+                font-size: 1.1rem;
+                color: #222;
+              }
+
+              p {
+                margin: 0.15rem 0;
+                font-size: 0.9rem;
+                color: #555;
+              }
+
+              .order-status {
+                display: inline-block;
+                margin-top: 0.25rem;
+                padding: 4px 12px;
+                border-radius: 15px;
+                font-weight: 600;
+                font-size: 0.85rem;
+                color: white;
+                text-transform: capitalize;
+
+                &.status-delivered {
+                  background-color: #28a745;
+                }
+
+                &.status-processing {
+                  background-color: #ffc107;
+                  color: #212529;
+                }
+
+                &.status-cancelled {
+                  background-color: #dc3545;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.user-account__not-logged-in {
+  max-width: 600px;
+  margin: 4rem auto;
+  text-align: center;
+  color: #666;
+  font-size: 1.3rem;
+}
+
+.user-dashboard {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  border: 1px solid lightgray;
+  width: 100%;
+  height: 300px;
+
+  .dashborad-title {
+    h2 {
+      font-size: 1.8rem;
+      margin: 10px 0;
+      color: $title-color;
+      text-transform: capitalize;
+    }
+  }
+
+  .dashborad-values {
+    margin: 30px 0;
+
+    li {
+      list-style-type: none;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ddd9d9;
+      font-weight: bold;
+
+      a {
+        text-decoration: none;
+        color: $Black-Color;
+      }
+    }
+  }
+}
+
+.ActiveBnt {
+  background-color: $btn-color;
+  color: $White-Color;
+
+  a {
+    text-decoration: none;
+    color: $White-Color !important;
+    letter-spacing: 1px;
+  }
+}
+
+.user-order {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  border: 1px solid lightgray;
+  width: 100%;
+  overflow-x: auto;
+  height: 300px;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.order-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.order-table th,
+.order-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.order-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.order-table td ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status.delivered {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.shipped {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+@media (max-width: 768px) {
+  .order-table {
+    display: block;
+  }
+
+  .order-table thead {
+    display: none;
+  }
+
+  .order-table tbody {
+    display: block;
+  }
+
+  .order-table tr {
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fff;
+  }
+}
+
+td {
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cod {
+  width: fit-content;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: auto;
+}

@@ -1,0 +1,145 @@
+@import '../index.scss';
+
+
+.about-banner {
+    width: 100%;
+    height: 300px;
+    background-image: url('../assets/images/Banner/About_banner.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 300px;
+        background-color: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    .about-container-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 999;
+        flex-direction: column;
+
+        h2 {
+            color: $White-Color;
+            font-weight: bold;
+            font-family: $roboto-font;
+        }
+
+        p {
+            color: white;
+            font-size: 1rem;
+
+            a {
+                font-size: 1.2rem;
+                color: red;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+
+
+.contact-container {
+    text-align: center;
+
+    h1 {
+        font-weight: bold;
+        color:$title-color;
+        font-family: $roboto-font;
+    }
+
+    p {
+        max-width: 1000px;
+        margin: auto;
+        font-size: 1.1rem;
+        color: black;
+        font-family: $Tagess-font;
+    }
+}
+
+.contact-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-icon {
+        font-size: 3rem;
+        border-radius: 50%;
+        background-color: $light-color; 
+        padding: 10px;
+        color: black;
+        margin-bottom: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: #222;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #444;
+        line-height: 1.4;
+    }
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form{
+    h3{
+        font-weight: bold;
+        column-rule: $title-color;
+        font-family: $roboto-font;
+    }
+    .form-control{
+        height:50px;
+        border: 1px solid black;
+        &::placeholder{
+            color: black;
+        }
+    }
+}
+#text-area{
+    height: 200px;
+    &:focus{
+        outline: none;
+        box-shadow: none;
+    }
+}
+.contact-form-section{
+    position: relative;
+    margin: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+.girl-image-wrapper{
+    position: absolute;
+    bottom: 0;
+}

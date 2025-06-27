@@ -1,0 +1,61 @@
+@import '../index.scss';
+
+    .form-container {
+        max-width: 1000px;
+        margin: 50px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+        border: 1px solid lightgray;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: #fff;
+      
+    .from-container-img {
+        img {
+            width: 100%;
+            height: 400px;
+        }
+    }
+    .form-section{
+        max-width: 400px;
+        width: 100%;
+        margin: 0 10px;
+        gap: 30px;
+        form{
+            gap: 90px;
+        }
+        label{
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        input{
+            padding: 5px;
+            border: 1px solid black;
+            &:focus{
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+
+.switch-signup {
+    margin-top: 20px;
+    text-align: center;
+
+    p {
+        font-size: 14px;
+        color: #555;
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

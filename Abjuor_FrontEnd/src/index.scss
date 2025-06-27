@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Share+Tech&family=Tagesschrift&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-display: swap;
+}
+
+
+/* variables  */
+
+$bg-dark-1 : #e5c8ff;
+$bg-dark-2 : #d7ffff;
+$bg-dark-3 : #ffebc5;
+$bg-dark-4 : #cdffc5;
+// $bg-color-2 : #abb6ff;
+$Ancizar-font : "Ancizar Sans",
+sans-serif;
+$roboto-font :"Roboto Slab",
+serif;
+$Tagess-font : "Tagesschrift",
+system-ui;
+$White-Color : #ffffff;
+// $main-color : #2a639d;
+$purple_color : #7048e8;
+$Black-Color : #000000;
+
+
+$title-color : #002930;
+// $primary-color : #7048e8;
+$primary-color : #b5a7f2;
+$heading-color : #5936c9;
+$light-color : #b5a7f2;
+// $btn-color  : 	#8a63f7;
+$btn-color : #002930;
+$text-color : #2e1065;
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.container {
+  max-width: 1400px !important;
+}
+
+button {
+  width: 150px;
+  border: none !important;
+  padding: 8px;
+  box-shadow: none !important;
+  background-color: #002930 !important;
+  color: $White-Color !important;
+  border-radius: 5px;
+}
+
+.product_titles {
+  font-size: 1.8rem;
+  font-family: $Ancizar-font;
+  color: $title-color;
+  font-weight: bold;
+}

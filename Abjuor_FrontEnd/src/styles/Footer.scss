@@ -1,0 +1,107 @@
+@import '../index.scss';
+
+.footer {
+    border: 1px solid lightgray;
+    width: 100%;
+    position: relative;
+    background-color: $primary-color;
+    margin-top: 50px;
+    padding: 20px 0 0 0;
+    color:$Black-Color;
+
+    .footer-content {
+        margin-bottom: 30px;
+
+        .footer-section {
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 1.25rem;
+                font-weight: 600;
+                margin-bottom: 20px;
+                color: $Black-Color
+            }
+
+            .company-tabs,
+            .footer-details {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    margin: 5px 0;
+
+                    a {
+                        color:$Black-Color;
+                        text-decoration: none;
+                        transition: color 0.3s;
+
+                        &:hover {
+                            color: #007bff;
+                        }
+                    }
+                }
+            }
+
+            .subscribe-button {
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+    }
+
+    .footer-bottom {
+        background-color:$Black-Color;
+        color:$Black-Color;
+        padding: 10px 0;
+        
+        p {
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0;
+            color: $White-Color;
+        }
+    }
+
+    .form-control {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .company-tabs {
+        gap: 30px;
+
+        li {
+            margin: 15px 0 !important;
+        }
+    }
+}
+
+.scrolls-container {
+    position: fixed;
+    right: 30px;
+    bottom: 0;
+    z-index: 999;
+    p {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        border-radius: 50%;
+        color: white;
+        background-color: red;
+        font-size: 1.5rem;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,147 @@
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import '../styles/Dashbord.scss';
+import { FaStar } from 'react-icons/fa';
+import { IoEyeSharp } from "react-icons/io5";
+import { useNavigate, useParams } from 'react-router-dom';
+import AllProducts from '../assets/data/ProductData.json';
+import Dashborad from '../components/Section/Dashborad';
+import Base_url from '../config/Base_Url'
+
+function Product_Dashboard() {
+    const navigate = useNavigate();
+    const [Products, setProduct] = useState([])
+    const { mainCategory, subCategory } = useParams();
+    const [Pagination, setPagination] = useState(1);
+    const ProductperPages = 9;
+    const [filteredProducts, setFilteredProducts] = useState([]);
+
+    useEffect(() => {
+        const matchedProducts = Object.entries(AllProducts).find(([key]) =>
+            key.toLowerCase().trim() === subCategory?.toLowerCase().trim()
+        );
+
+        if (matchedProducts) {
+            const [matchedCategory, products] = matchedProducts;
+            const dataWithCategory = products.map(product => ({
+                ...product,
+                subCategory: matchedCategory,
+                mainCategory: mainCategory,
+            }));
+            setFilteredProducts(dataWithCategory);
+        } else {
+            setFilteredProducts([]);
+        }
+    }, [mainCategory, subCategory]);
+
+
+    useEffect(() => {
+        const getAllProducts = async () => {
+            try {
+                const response = await fetch(`${Base_url}/all-products`)
+                if (!response.ok) {
+                    console.log("Fetching error")
+                }
+                const data = await response.json()
+                
+                if (Array.isArray(data)) {
+                    setProduct(data)
+                }
+                else if (Array.isArray(data.product)) {
+                    setProduct(data.product)
+                }
+                else {
+                    console.error("Data format error:", data);
+                }
+
+            } catch (error) {
+                console.log("Data Not Found", error)
+            }
+        }
+        getAllProducts()
+
+    }, [])
+
+    useEffect(() => {
+        console.log("Updated Products:", Products);
+    }, [Products]);
+    
+
+    const indexLastProduct = Pagination * ProductperPages;
+    const indexFirstProduct = indexLastProduct - ProductperPages;
+    const currentProduct = filteredProducts.slice(indexFirstProduct, indexLastProduct);
+    const totalProduct = Math.ceil(filteredProducts.length / ProductperPages);
+
+    const Navigateurl = (mainCategory, subCategory, id) => {
+        navigate(`/product-category/${mainCategory}/${subCategory}/${id}`);
+    };
+
+
+
+    return (
+        <Container className="py-4">
+            <Row>
+                <Col lg={3} md={12}>
+                    <Dashborad />
+                </Col>
+
+                <Col lg={9}>
+                    <div className="cards_main_containers">
+                        <Row>
+                            {currentProduct.length === 0 ? (
+                                <p>No products found for this category.</p>
+                            ) : (
+                                currentProduct.map((product, idx) => (
+                                    <Col lg='4' md='6' sm='12' key={`${product.productName}-${idx}`} className="mb-4">
+                                        <div className="card_container">
+                                            <div className="card_img">
+                                                <img src={product.productImg} alt={product.productName} />
+                                                <div className="card_details">
+                                                    <h3 className='card_name'>{product.productName}</h3>
+                                                    <div className="rating_cards">
+                                                        {[...Array(5)].map((_, index) => (
+                                                            <FaStar key={index} />
+                                                        ))}
+                                                    </div>
+                                                    <div className="product_prices d-flex align-items-center justify-content-between">
+                                                        <h4>{product.ProductPrice} <sup>{product.ProductOldPrice}</sup></h4>
+                                                        <IoEyeSharp
+                                                            onClick={() => {
+                                                                console.log(product.mainCategory);
+
+                                                                Navigateurl(product.mainCategory, product.subCategory, indexFirstProduct + idx)
+                                                            }
+                                                            }
+                                                            style={{ cursor: 'pointer' }}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                ))
+                            )}
+                        </Row>
+                    </div>
+
+                    <nav className='pagination-container'>
+                        <ul className="pagination">
+                            {Array.from({ length: totalProduct }, (_, i) => (
+                                <li key={i} className={`page-item ${Pagination === i + 1 ? 'active' : ''}`}>
+                                    <button
+                                        className="page-link"
+                                        onClick={() => setPagination(i + 1)}
+                                    >
+                                        {i + 1}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </Col>
+            </Row>
+        </Container>
+    );
+}
+
+export default Product_Dashboard;

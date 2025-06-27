@@ -1,0 +1,318 @@
+@import '../index.scss';
+
+
+.container-fluid {
+    border: 1px solid lightgray;
+}
+
+.custom-navbar {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9999;
+
+    .navbar-brand {
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .hamburger {
+        width: 100%;
+        cursor: pointer;
+
+        .bar {
+            display: flex;
+            width: 25px;
+            height: 3px;
+            background-color: $Black-Color;
+            margin: 5px 0;
+        }
+    }
+
+    .search-icons {
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .add-to-cart {
+            position: relative;
+
+            .cart-badge {
+                position: absolute;
+                top: -8px;
+                color: white;
+                width: 20px;
+                height: 20px;
+                background-color: #6e2f1b;
+                right: -10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+            }
+        }
+
+    }
+
+    .heart {
+        position: relative;
+
+        .heart-badge {
+            position: absolute;
+            top: -8px;
+            color: white;
+            width: 20px;
+            height: 20px;
+            background-color: #6e2f1b;
+            right: -10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+    }
+}
+
+.desktop-menu {
+    gap: 10px;
+    width: 100%;
+
+    .nav-item {
+        position: relative;
+        color: black;
+        margin: 10px;
+        cursor: pointer;
+        list-style-type: none;
+
+        &:hover .submenu {
+            display: block;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 0 !important;
+            background: #fff;
+            z-index: 999;
+            color: #000;
+            min-width: 200px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+            li {
+                padding: 0.5rem 1rem;
+                list-style-type: none;
+                white-space: nowrap;
+
+                &:hover {
+                    background-color: #f0f0f0;
+                    border: 1px solid lightgray;
+                    background-color: green;
+
+                    a {
+                        text-decoration: none;
+                        color: $White-Color;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+.mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background: $primary-color;
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    color: #fff;
+    transition: 0.5s ease-in;
+    overflow-y: auto;
+
+    &.open {
+        display: flex;
+    }
+
+    .mobile-menu-header {
+        display: flex;
+        justify-content: flex-end;
+
+        .close-btn {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+
+    .mobile-nav-links {
+        .nav-item {
+            font-size: 1.2rem;
+            padding: 1rem 0;
+            color: $White-Color;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+
+            .submenu {
+                list-style: none;
+                padding-left: 1rem;
+                margin-top: 0.5rem;
+
+                li {
+                    padding: 0.4rem 0;
+                    font-size: 1rem;
+                    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+
+                    a {
+                        color: $White-Color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.logo-here {
+    img {
+        width: 150px;
+        height: auto;
+    }
+}
+
+.nav-item {
+
+    li {
+        // padding: 0.5rem 1rem;
+        list-style-type: none;
+        white-space: nowrap;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
+
+.login-stystem {
+    li {
+        list-style-type: none;
+        font-weight: bold;
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    }
+}
+
+.mobile-submenu {
+    display: none;
+    margin: 10px;
+    padding: 0 !important;
+
+    li {
+        margin: 10px 0;
+        border: 1px solid #d3d3d330;
+        border-radius: 8px;
+        padding: 10px;
+
+        a {
+            color: #112ec7;
+        }
+    }
+}
+
+.tabs {
+    color: #112ec7;
+    font-weight: bold;
+}
+
+.mobile-item {
+    li {
+        a {
+            font-weight: bold;
+            color: #112ec7;
+        }
+    }
+}
+
+.show {
+    display: block !important;
+}
+
+.user-dropdown {
+    position: relative;
+    cursor: pointer;
+  
+    .user-name {
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 5px 10px;
+      margin: 2px 0 0 0 ;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+  
+    .user-submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      min-width: 120px;
+  
+      li {
+        padding: 3px 15px;
+        white-space: nowrap;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+  
+    &:hover .user-submenu {
+      display: block;
+    }
+}
+
+.login-system{
+    li{
+        list-style-type: none;
+        font-size: 1.1rem;
+        a{
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px !important;
+            color: $Black-Color;
+        }
+    }
+}

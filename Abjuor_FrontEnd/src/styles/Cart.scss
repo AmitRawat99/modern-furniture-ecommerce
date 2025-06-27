@@ -1,0 +1,28 @@
+@import '../index.scss';
+
+.shoping-cart{
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: $title-color;
+}
+.order{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $title-color;
+}
+.cart-empty{
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $title-color;
+    text-align: center;
+}
+
+.remove-btn{
+    font-size: 1.9rem;
+    color: black;
+}
+.product-name{
+    width: 300px;
+    max-width: 300px;
+}

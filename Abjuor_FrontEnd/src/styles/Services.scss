@@ -1,0 +1,44 @@
+@import '../index.scss';
+
+.service-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  
+    .icon {
+      color: $purple_color;
+    }
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+  }
+  
+
+  .bg-dark-1 {
+    background-color: $bg-dark-1;
+    color: #000;
+  }
+  
+  .bg-dark-2 {
+    background-color: $bg-dark-2;
+    color: #000;
+  }
+  
+  .bg-dark-3 {
+    background-color: $bg-dark-3;
+    color: #000;
+  }
+  
+  .bg-dark-4 {
+    background-color: $bg-dark-4;
+    color: #000;
+  }
+  

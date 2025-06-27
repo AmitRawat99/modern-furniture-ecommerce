@@ -1,0 +1,34 @@
+@import '../index.scss';
+
+.branded-product-logo {
+    margin: 50px 0;
+    img {
+        width: 250px;
+        height: 100px;
+        object-fit: contain;
+        border: 1px solid #80808063;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 8px lightblue;
+    }
+}
+.category-title{
+    border-bottom: 1px solid lightgray;
+}
+
+@media(max-width:767px){
+    .branded-product-logo {
+        margin: 50px 0;
+        img {
+            width: 100%;
+            height: 100px;
+            object-fit: contain;
+            border: 1px solid #80808063;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 8px lightblue;
+        }
+    }
+}

@@ -1,0 +1,132 @@
+@import '../index.scss';
+
+
+
+.info-bar {
+    padding: 8px 0;
+    position: relative;
+
+    .logo-area .info-logo {
+        width: 120px;
+        height: auto;
+    }
+
+    .search-icons {
+        font-size: 20px;
+
+        color: $Black-Color div {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .badge {
+            position: absolute;
+            top: -6px;
+            right: -10px;
+            background-color: red;
+            color: #fff;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            text-align: center;
+            border-radius: 50%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .logo-area .info-logo {
+            width: 90px;
+        }
+
+        .search-icons {
+            font-size: 18px;
+            gap: 1rem;
+        }
+    }
+}
+
+.ul-tabs-info {
+    li {
+        list-style-type: none;
+        margin: 10px;
+
+        a {
+            text-decoration: none;
+            color: $Black-Color;
+        }
+    }
+}
+
+.marquee-area {
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+
+    marquee {
+        width: 100%;
+        color: $heading-color;
+        font-weight: bold;
+    }
+
+
+}
+
+.input-container {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+
+    svg {
+        width: 40px;
+        font-size: 30px;
+        padding: 2px;
+        cursor: pointer;
+        display: flex;
+        justify-content: right;
+    }
+
+    input {
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        padding: 8px;
+        width: 90%;
+    }
+}
+
+.add-to-cart {
+    cursor: pointer;
+}
+
+.hamburger {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-user {
+    svg {
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-area .info-logo {
+        width: 90px;
+    }
+
+    .marquee-area {
+        // display: none;
+    }
+
+    .search-icons {
+        font-size: 18px;
+        gap: 1rem;
+    }
+}

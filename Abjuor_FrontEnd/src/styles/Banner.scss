@@ -1,0 +1,81 @@
+@import '../index.scss';
+
+.Banner-section {
+    background-color: $primary-color
+}
+
+.banner-container {
+    display: flex;
+    align-items: center;
+
+    .banner-content {
+        gap: 40px;
+
+        h1 {
+            color: $White-Color;
+            font-family: $roboto-font;
+            font-size: 1.8rem;
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 15px;
+            font-family: cursive;
+            color: $White-Color;
+        }
+    }
+}
+
+
+
+.Banner-section {
+    padding: 20px 0;
+}
+
+.banner-swiper {
+    width: 100%;
+
+    .banner-slide-row {
+        display: flex;
+        align-items: center;
+        min-height: 300px;
+
+        .banner-slide-content {
+            padding: 20px;
+
+            h3 {
+                color: #070a04;
+                font-weight: bold;
+                font-family: $Tagess-font;
+                margin-bottom: 10px;
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            h1 {
+                color: $Black-Color;
+                font-family: $roboto-font;
+                font-size: 1.8rem;
+                margin: 10px 0;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+
+            p {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+                color: black;
+            }
+        }
+
+        .banner-slide-image {
+            img {
+                width: 100%;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+        }
+    }
+}

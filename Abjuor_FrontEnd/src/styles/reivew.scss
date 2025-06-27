@@ -1,0 +1,51 @@
+@import '../index.scss';
+
+.star-icns{
+    border: 2px solid #d3d3d3ab;
+    display: flex;
+    padding: 3px 10px;
+    cursor: pointer;
+    align-items: center;
+    h6{
+        margin-right: 20px;
+        margin: 1px 20px 0 0;
+    }
+}
+.textarea{
+    margin: 18px 0;
+    textarea{
+        border: 1px solid black;
+        &:focus{
+            box-shadow: none !important;
+            outline: none !important;
+        }
+    }
+}
+
+.comment-user{
+    display: flex;
+    gap: 10px;
+
+    img{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+    strong{
+        text-transform: capitalize;
+    }
+}
+.our-message{
+    margin: 5px;
+    p{
+        max-width: 500px;
+    }
+}
+
+.user-names{
+    display: flex;
+    flex-direction: column;
+    svg{
+        color: orangered;
+    }    
+}

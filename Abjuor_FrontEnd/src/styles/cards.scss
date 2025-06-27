@@ -1,0 +1,55 @@
+@import '../index.scss';
+
+
+.product-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  
+    img {
+      width: 100%;
+      cursor: pointer;
+      height: 300px;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+  
+    .product-details {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+      color: white;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+  
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        font-size: 0.95rem;
+        margin: 0;
+      }
+    }
+  
+    &:hover {
+      transform: translateY(-5px);
+  
+      img {
+        transform: scale(1.05);
+      }
+  
+      .product-details {
+        opacity: 1;
+      }
+    }
+  }
+  
